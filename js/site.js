@@ -47,11 +47,6 @@ window.MitraanshSite = (function () {
       '          <span class="logo__tagline">Premium Real Estate</span>' +
       '        </div>' +
       '      </a>' +
-      '      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav"><span></span><span></span><span></span></button>' +
-      '    </div>' +
-      '  </div>' +
-      '</header>' +
-      '<div class="nav-backdrop" id="nav-backdrop" aria-hidden="true"></div>' +
       '<nav class="nav" id="main-nav" aria-label="Main navigation">' +
       '        <div class="nav__links">' +
       '          <a href="index.html" class="nav__link" data-nav="home"' + activeClass("home") + '>Home</a>' +
@@ -81,6 +76,11 @@ window.MitraanshSite = (function () {
       '          Contact Us' +
       '        </a>' +
       '</nav>' +
+      '      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav"><span></span><span></span><span></span></button>' +
+      '    </div>' +
+      '  </div>' +
+      '</header>' +
+      '<div class="nav-backdrop" id="nav-backdrop" aria-hidden="true"></div>' +
       '</div>';
   }
 

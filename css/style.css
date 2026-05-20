@@ -181,21 +181,28 @@ ul {
 }
 
 @media (min-width: 769px) {
-  .site-header .nav {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: var(--header-h);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 2;
-    pointer-events: none;
+  .header,
+  .header__bar,
+  .header__inner {
+    overflow: visible;
   }
 
-  .site-header .nav > * {
-    pointer-events: auto;
+  .header__inner .nav {
+    flex: 1;
+    justify-content: center;
+    min-width: 0;
+  }
+
+  .nav__links {
+    overflow: visible;
+  }
+
+  .nav__item--dropdown {
+    position: relative;
+  }
+
+  .nav__dropdown-menu {
+    z-index: 1100;
   }
 }
 
@@ -1676,6 +1683,21 @@ ul {
 
   .page-hero--about {
     padding-bottom: 3.5rem;
+  }
+
+  /* Prevent backdrop-filter from clipping the full-screen mobile menu */
+  .header,
+  .header.is-scrolled,
+  .header:not(.header--on-dark) {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  .site-header,
+  .header,
+  .header__bar,
+  .header__inner {
+    overflow: visible;
   }
 
   .nav-backdrop {
