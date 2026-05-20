@@ -1,0 +1,6 @@
+# Mitraansh Realty
+User-agent: *
+Allow: /
+
+# Update Sitemap URL when your live domain is configured
+Sitemap: https://mitraanshrealty.com/sitemap.xml

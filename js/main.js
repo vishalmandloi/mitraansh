@@ -98,27 +98,44 @@ function mitraanshAppInit() {
   function bindNav() {
     const navToggle = document.querySelector(".nav-toggle");
     const nav = document.querySelector(".nav");
+    const backdrop = document.getElementById("nav-backdrop");
     if (!navToggle || !nav) return;
 
+    function setMenuOpen(open) {
+      navToggle.classList.toggle("is-active", open);
+      nav.classList.toggle("is-open", open);
+      navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+      navToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+      document.body.classList.toggle("menu-open", open);
+      if (backdrop) {
+        backdrop.classList.toggle("is-visible", open);
+        backdrop.setAttribute("aria-hidden", open ? "false" : "true");
+      }
+    }
+
+    function closeMenu() {
+      setMenuOpen(false);
+    }
+
     navToggle.addEventListener("click", function () {
-      navToggle.classList.toggle("is-active");
-      nav.classList.toggle("is-open");
-      document.body.style.overflow = nav.classList.contains("is-open") ? "hidden" : "";
+      setMenuOpen(!nav.classList.contains("is-open"));
     });
 
+    if (backdrop) {
+      backdrop.addEventListener("click", closeMenu);
+    }
+
     nav.querySelectorAll(".nav__link, .nav__dropdown-menu a, .header__cta").forEach(function (link) {
-      link.addEventListener("click", function () {
-        navToggle.classList.remove("is-active");
-        nav.classList.remove("is-open");
-        document.body.style.overflow = "";
-      });
+      link.addEventListener("click", closeMenu);
     });
 
     nav.querySelectorAll(".nav__item--dropdown > .nav__link").forEach(function (trigger) {
       trigger.addEventListener("click", function (e) {
-        if (window.innerWidth <= 768) {
-          e.preventDefault();
-          trigger.parentElement.classList.toggle("is-open");
+        if (window.innerWidth <= 768 && nav.classList.contains("is-open")) {
+          var submenu = trigger.parentElement.querySelector(".nav__dropdown-menu");
+          if (submenu && !submenu.contains(e.target)) {
+            trigger.parentElement.classList.toggle("is-open");
+          }
         }
       });
     });

@@ -36,6 +36,7 @@ window.MitraanshSite = (function () {
     }
 
     el.outerHTML =
+      '<div class="site-header">' +
       '<header class="' + headerClass + '">' +
       '  <div class="container header__bar">' +
       '    <div class="header__inner">' +
@@ -46,8 +47,12 @@ window.MitraanshSite = (function () {
       '          <span class="logo__tagline">Premium Real Estate</span>' +
       '        </div>' +
       '      </a>' +
-      '      <button class="nav-toggle" type="button" aria-label="Open menu"><span></span><span></span><span></span></button>' +
-      '      <nav class="nav" id="main-nav">' +
+      '      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav"><span></span><span></span><span></span></button>' +
+      '    </div>' +
+      '  </div>' +
+      '</header>' +
+      '<div class="nav-backdrop" id="nav-backdrop" aria-hidden="true"></div>' +
+      '<nav class="nav" id="main-nav" aria-label="Main navigation">' +
       '        <div class="nav__links">' +
       '          <a href="index.html" class="nav__link" data-nav="home"' + activeClass("home") + '>Home</a>' +
       '          <a href="index.html#projects" class="nav__link" data-nav="projects"' + activeClass("projects") + '>Our Projects</a>' +
@@ -75,10 +80,8 @@ window.MitraanshSite = (function () {
       '          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>' +
       '          Contact Us' +
       '        </a>' +
-      '      </nav>' +
-      '    </div>' +
-      '  </div>' +
-      '</header>';
+      '</nav>' +
+      '</div>';
   }
 
   function renderFooter() {
