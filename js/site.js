@@ -117,7 +117,7 @@ window.MitraanshSite = (function () {
       '        <a href="navi-mumbai.html#projects">Navi Mumbai</a><a href="jaipur.html#projects">Jaipur</a><a href="kota.html#projects">Kota</a></div></div>' +
       '      <div><h4>Contact</h4><div class="footer__links">' +
       '        <a href="tel:+918618265104">+91 86182 65104</a>' +
-      '        <a href="mailto:info@mitraanshrealty.com">info@mitraanshrealty.com</a></div></div>' +
+      '        <a href="mailto:mitraansh.realty@gmail.com">mitraansh.realty@gmail.com</a><a href="https://www.instagram.com/mitraansh.realty" target="_blank" rel="noopener">Instagram</a><a href="https://www.youtube.com/@mitraansh" target="_blank" rel="noopener">YouTube</a></div></div>' +
       '      <div><h4>Quick Links</h4><div class="footer__links">' +
       '        <a href="index.html#projects">Our Projects</a><a href="about.html">About Us</a><a href="contact.html">Contact</a></div></div>' +
       '    </div>' +
